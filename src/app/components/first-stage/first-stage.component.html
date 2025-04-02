@@ -1,0 +1,14 @@
+<div class="flex-1 w-full justify-center p-36">
+    <h3 class="text-white mb-8 text-xl">Valitse workshopin konfiguraatio:</h3>
+    <div class="grid-cols-3 grid gap-16">
+        @for (config of configs; track $index) {
+        <configuration [selected]="selectedConfig === $index" (setSelected)="setSelected.emit($index)"
+            [config]="config" />
+        }
+    </div>
+
+
+</div>
+<div class="flex-1 flex items-center justify-center w-full">
+    <selector-button text="Seuraava" [disabled]="selectedConfig === null" (onPress)="nextStage.emit()" />
+</div>

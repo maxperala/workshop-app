@@ -1,0 +1,5 @@
+<button
+    [class]="`p-8 border-2 rounded-lg flex justify-center items-center w-[30vw] transition-all text-white border-black ${disabled ? 'bg-gray-400' : 'bg-primary hover:scale-105 hover:cursor-pointer'}`"
+    (click)="onPress.emit()" [disabled]="disabled">
+    {{text}}
+</button>
