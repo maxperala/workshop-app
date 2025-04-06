@@ -9,7 +9,7 @@ import { ConfigurationData } from '../../../types';
   imports: [SelectorButton, Configuration],
 })
 export class FirstStage {
-  @Input() selectedConfig!: number | null;
+  @Input() selectedConfig!: number | undefined;
   @Input() configs!: ConfigurationData[];
   @Output() setSelected = new EventEmitter<number>();
   @Output() nextStage = new EventEmitter<void>();

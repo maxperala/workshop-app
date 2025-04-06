@@ -3,11 +3,14 @@
     <h1 class="text-3xl text-primary">Tepon Workshop Työkalu</h1>
   </div>
 
-  <div class="flex flex-col flex-4">
+  <div class="flex flex-col flex-4 bg-dark-blue">
     @if (stage === 1) {
     <first-stage [selectedConfig]="selectedConfig" (setSelected)="setSelected($event)" (nextStage)="nextStage()"
       [configs]="allConfigs" />
     }
+    @else if (stage === 2 && selectedConfig != undefined) {
+    <second-stage [selectedConfig]="allConfigs[selectedConfig]" /> }
+
   </div>
 
 

@@ -1,6 +1,6 @@
-<div class="flex-1 w-full justify-center p-36">
+<div class="flex-1 w-full justify-center p-20">
     <h3 class="text-white mb-8 text-xl">Valitse workshopin konfiguraatio:</h3>
-    <div class="grid-cols-3 grid gap-16">
+    <div class="flex justify-center w-full flex-wrap gap-3 items-center">
         @for (config of configs; track $index) {
         <configuration [selected]="selectedConfig === $index" (setSelected)="setSelected.emit($index)"
             [config]="config" />

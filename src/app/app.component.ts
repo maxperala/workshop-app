@@ -1,30 +1,17 @@
 import { Component } from '@angular/core';
 import { FirstStage } from './components/first-stage/first-stage.component';
 import { ConfigurationData } from '../types';
-
-const configs: ConfigurationData[] = [
-  {
-    participants: 9,
-    groups: 3,
-  },
-  {
-    participants: 32,
-    groups: 6,
-  },
-  {
-    participants: 78,
-    groups: 9,
-  },
-];
+import configs from '../schedules.json';
+import { SecondStage } from './components/second-stage/second-stage.component';
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
-  imports: [FirstStage],
+  imports: [FirstStage, SecondStage],
 })
 export class AppComponent {
   title = 'Tepon Workshop Työkalu';
-  selectedConfig: number | null = null;
+  selectedConfig: number | undefined = undefined;
   stage = 1;
   allConfigs: ConfigurationData[] = configs;
 

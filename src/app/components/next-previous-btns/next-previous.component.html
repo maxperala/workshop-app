@@ -1,0 +1,4 @@
+<div class="flex flex-row gap-4">
+    <selector-button text="Edellinen" [disabled]="!prevEnabled" (onPress)="prevRound.emit()" />
+    <selector-button text="Seuraava" [disabled]="!nextEnabled" (onPress)="nextRound.emit()" />
+</div>

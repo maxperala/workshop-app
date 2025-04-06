@@ -10,9 +10,9 @@ export class Configuration {
   @Input() config!: ConfigurationData;
   @Output() setSelected = new EventEmitter<void>();
 
-  getStyle = () => {
+  get configStyle() {
     return this.selected
-      ? 'bg-secondary border-2 w-full p-7 rounded-2xl shadow-md flex flex-col transition-all'
-      : 'bg-gray-200 border-2 w-full p-7 rounded-2xl flex flex-col hover:cursor-pointer hover:scale-110 transition-all';
-  };
+      ? 'bg-secondary border-2 p-7 rounded-2xl shadow-md flex flex-col transition-all min-w-[150px]'
+      : 'bg-gray-200 border-2 p-7 rounded-2xl flex flex-col hover:cursor-pointer hover:scale-110 transition-all min-w-[150px]';
+  }
 }

@@ -1,5 +1,5 @@
-<div [class]="getStyle()" (click)="setSelected.emit()">
-    <div class="text-sm">Workshop Pisteitä: {{config.groups}}</div>
+<div class="{{configStyle}}" (click)="setSelected.emit()">
+    <div class="text-sm">Workshop pisteitä: {{config.groups}}</div>
     <div class="text-sm">Osallistujia: {{config.participants}}</div>
     <div class="text-sm"></div>
 </div>

@@ -1,0 +1,9 @@
+<div class="bg-custom-blue border-2 p-7 rounded-lg shadow-md flex flex-col gap-2">
+    <h3 class="text-lg mb-4 text-primary flex">Workshop {{wsNumber + 1}}</h3>
+    <ul class="list-disc list-inside">
+        @for (person of participants; track $index) {
+        <li class="text-white text-sm">Osallistuja {{person}}</li>
+        }
+    </ul>
+
+</div>
