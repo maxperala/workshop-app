@@ -1,8 +1,8 @@
-<div class="bg-custom-blue border-2 p-7 rounded-lg shadow-md flex flex-col gap-2">
+<div class="bg-custom-blue border-2 p-4 rounded-lg shadow-md flex flex-col gap-2">
     <h3 class="text-lg mb-4 text-primary flex">Workshop {{wsNumber + 1}}</h3>
-    <ul class="list-disc list-inside">
+    <ul class="list-disc list-inside flex-col flex gap-1">
         @for (person of participants; track $index) {
-        <li class="text-white text-sm">Osallistuja {{person}}</li>
+        <li [class]="getStyle(person)">Osallistuja {{person + 1}}</li>
         }
     </ul>
 

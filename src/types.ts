@@ -7,3 +7,10 @@ export interface ConfigurationData {
 export type Rotation = number[][][];
 
 export type GroupData = number[];
+
+export interface Participant {
+  id: number;
+  color: string;
+}
+
+export type PersonMap = Map<number, Participant>;
