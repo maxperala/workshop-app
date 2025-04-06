@@ -1,59 +1,36 @@
-# TeppoWsSystem
+# Tepon Workshop Työkalu
 
-This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 19.2.3.
+Stack:
+- Angular
+- Tailwind CSS
+- Docker
 
-## Development server
+Sovellus löytyy livenä osoitteesta https://teppo-ws-system.fly.dev/
 
-To start a local development server, run:
+## Käyttö
 
-```bash
-ng serve
-```
+`npm install` ja `npm start` tai fly.io linkin kautta :)
 
-Once the server is running, open your browser and navigate to `http://localhost:4200/`. The application will automatically reload whenever you modify any of the source files.
+### Ajatusprosessi
 
-## Code scaffolding
+Tehtävänannossa kuvataan ongelma, jossa jokin sattumanvarainen määrä osallistujia tulisi jakaa tasaisesti työpajoihin niin, että kukaan ei ole työpajassa saman ihmisen kanssa kuin kerran. Samoin yhdessä työpajassa voi käydä vain kerran ja työpajoja pidetään yhtä monta, kuin on kierroksia.
 
-Angular CLI includes powerful code scaffolding tools. To generate a new component, run:
+Aika nopeasti kävi selväksi, etten osaa tällaista laskea päässä enkä keksi mitään järkevää algoritmia sen ratkaisemiseksi.
 
-```bash
-ng generate component component-name
-```
+Selvitin googlesta, että kyseessä on pitkälti ns. *Social Golfer Problem* sillä lisärajoituksella, että workshoppeja tulee olla yhtä monta kuin kierroksia. Sen ratkaiseminen on jollain syötteillä mahdotonta, eikä muutenkaan mitenkään yksinkertaista.
 
-For a complete list of available schematics (such as `components`, `directives`, or `pipes`), run:
+Päätin antaa koko ongelman itsessään olla ja keskittyä tekemään kuitenkin toimiva prototyyppi. Ohjelma ei siis laske yhtään mitään vaan lataa valmiit vastaukset JSON tiedostosta `schedules.json`.  Sinne voi myös modulaarisesti lisätä lisää ratkaisuja halutessaan. Päätin, että workshopin pitäjän täytyy valita joku sopiva *konfiguraatio* annetuista vaihtoehdoista, niin päästään varmasti lopputulokseen, joka toimii vaikka ei olekaan täydellinen.
 
-```bash
-ng generate --help
-```
+Itse sovellus on aika yksinkertainen eikä oikeastaan tee muuta, kuin näyttää dataa tuosta JSON tiedostosta sopivassa muodossa. Lisäksi lisäsin sovellukseen värikoodauksen sen mukaan missä ryhmässä kukakin on ollut ensimmäisellä kierroksella. Näin ihmisten hyppimistä ryhmistä toiseen on helpompi seurata.
 
-## Building
+### Ajankäyttö
 
-To build the project run:
+Venytin tässä kohtaa sääntöjä vähän. Sovelluksen peruslogiikka ja toiminnallisuudet tulivat kyllä valmiiksi alle neljässä tunnissa, mutta jos mukaan laskee esimerkiksi kaikki tyylit ja muun extran niin aikaa meni kyllä enemmän.
 
-```bash
-ng build
-```
+Itselläni kun ei ole Angular taustaa niin kaikkea yllättävää tuli matkalla vastaan myös sen saralta.
 
-This will compile your project and store the build artifacts in the `dist/` directory. By default, the production build optimizes your application for performance and speed.
+### Tekoälyn käyttö
 
-## Running unit tests
+Käytin ratkaisujen (`schedules.json`) "haalimiseen" Googlen OR-Tools solveria pythonin kautta. Kyseessä on minulle täysin uusi työkalu enkä olisi sitä ehtinyt opetella, joten päätin hyödyntää tekoälyä tässä kohtaa. Sain ratkaistua ongelmaan muutaman ratkaisun pitkälti tekoälyn kirjoittamaa python-scriptiä käyttäen (openAI o3-mini-high), pienillä omilla muokkauksilla.
 
-To execute unit tests with the [Karma](https://karma-runner.github.io) test runner, use the following command:
-
-```bash
-ng test
-```
-
-## Running end-to-end tests
-
-For end-to-end (e2e) testing, run:
-
-```bash
-ng e2e
-```
-
-Angular CLI does not come with an end-to-end testing framework by default. You can choose one that suits your needs.
-
-## Additional Resources
-
-For more information on using the Angular CLI, including detailed command references, visit the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+Käytin tekoälyä apuna aika ajoin esimerkiksi, jos en löytänyt etsimääni Angular-dokumentaatiosta. Kaikki koodi on kuitenkin omaani :)

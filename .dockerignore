@@ -6,7 +6,8 @@ dist
 tmp
 out-tsc
 bazel-out
-
+.obsidian
+.obsidian/*
 # Node
 node_modules
 **/npm-debug.log
